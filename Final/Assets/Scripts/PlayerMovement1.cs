@@ -1,52 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement1 : MonoBehaviour
 {
-    public float speed = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float movementSpeed = 5f; // Velocidad de movimiento
+    [SerializeField] private float jumpForce = 10f; // Fuerza del salto
+    [SerializeField] private float groundCheckRadius = 0.2f; // Radio del círculo para comprobar si está en el suelo
+    [SerializeField] private LayerMask whatIsGround; // Capa que representa el suelo
 
-    // Update is called once per frame
-    void Update()
-    {
+    private Rigidbody2D rb;
+    private bool isGrounded;
+    private float horizontalMovement;
 
-        // Derecha
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.x = newPosition.x + speed * Time.deltaTime;
-            transform.position = newPosition;
-        }
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-        // Izquierda
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.x = newPosition.x - speed * Time.deltaTime;
-            transform.position = newPosition;
-        }
+    void Update()
+    {
+        // Comprobar si está en el suelo
+        isGrounded = Physics2D.OverlapCircle(transform.position, groundCheckRadius, whatIsGround);
 
-        // Arriba
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.y = newPosition.y + speed * Time.deltaTime;
-            transform.position = newPosition;
-        }
+        // Mover el personaje horizontalmente
+        horizontalMovement = Input.GetAxisRaw("Horizontal") * movementSpeed;
 
-        // Abajo
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.y = newPosition.y - speed * Time.deltaTime;
-            transform.position = newPosition;
-        }
+        // Saltar si está en el suelo y se pulsa la flecha hacia arriba
+        if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+    }
 
-    }
+    void FixedUpdate()
+    {
+        // Aplicar la velocidad de movimiento horizontal al Rigidbody del personaje
+        rb.velocity = new Vector2(horizontalMovement, rb.velocity.y);
+    }
 }
 
