@@ -396,7 +396,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc7a472a212f004fb40d509ee63ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  movementSpeed: 5
+  jumpForce: 10
+  groundCheckRadius: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &403467764
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +413,7 @@ GameObject:
   - component: {fileID: 403467766}
   - component: {fileID: 403467765}
   - component: {fileID: 403467767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +536,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406069163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.5981705, y: 0.096450746, z: -9.972943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -551,7 +556,7 @@ GameObject:
   - component: {fileID: 441679139}
   - component: {fileID: 441679138}
   - component: {fileID: 441679140}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +729,7 @@ GameObject:
   - component: {fileID: 542544699}
   - component: {fileID: 542544700}
   - component: {fileID: 542544701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,6 +829,117 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!1 &566652429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 566652430}
+  - component: {fileID: 566652432}
+  - component: {fileID: 566652431}
+  m_Layer: 6
+  m_Name: Square (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &566652430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566652429}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.68, y: -16.35, z: 9.972943}
+  m_LocalScale: {x: 1.6229103, y: 33.45102, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960188747}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &566652431
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566652429}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &566652432
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566652429}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &580261393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,7 +1013,7 @@ GameObject:
   - component: {fileID: 583735440}
   - component: {fileID: 583735439}
   - component: {fileID: 583735441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,7 +1124,7 @@ GameObject:
   - component: {fileID: 584784548}
   - component: {fileID: 584784547}
   - component: {fileID: 584784549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,6 +1303,117 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.6, y: 1.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &601817935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601817936}
+  - component: {fileID: 601817938}
+  - component: {fileID: 601817937}
+  m_Layer: 6
+  m_Name: Square
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &601817936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601817935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.0768, y: -3.02, z: 9.972943}
+  m_LocalScale: {x: 1.6229103, y: 23.111109, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960188747}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &601817937
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601817935}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &601817938
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601817935}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1391,7 +1618,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1415,7 +1642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642654419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -9.7, z: -10}
+  m_LocalPosition: {x: 0.17, y: -4.04, z: -10}
   m_LocalScale: {x: 10, y: 10, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1433,7 +1660,7 @@ GameObject:
   - component: {fileID: 671816331}
   - component: {fileID: 671816332}
   - component: {fileID: 671816333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1544,7 +1771,7 @@ GameObject:
   - component: {fileID: 750224391}
   - component: {fileID: 750224390}
   - component: {fileID: 750224392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform_Uncolored_Wide (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1631,7 +1858,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1642,7 +1869,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.4, y: 1}
+  m_Size: {x: 4, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &758734226
 GameObject:
@@ -1655,7 +1882,7 @@ GameObject:
   - component: {fileID: 758734228}
   - component: {fileID: 758734227}
   - component: {fileID: 758734229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1766,7 +1993,7 @@ GameObject:
   - component: {fileID: 764808458}
   - component: {fileID: 764808459}
   - component: {fileID: 764808460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +2104,7 @@ GameObject:
   - component: {fileID: 808602458}
   - component: {fileID: 808602457}
   - component: {fileID: 808602459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1988,7 +2215,7 @@ GameObject:
   - component: {fileID: 837733772}
   - component: {fileID: 837733773}
   - component: {fileID: 837733774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2099,7 +2326,7 @@ GameObject:
   - component: {fileID: 849781384}
   - component: {fileID: 849781385}
   - component: {fileID: 849781386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2210,7 +2437,7 @@ GameObject:
   - component: {fileID: 953213564}
   - component: {fileID: 953213563}
   - component: {fileID: 953213565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2321,7 +2548,7 @@ GameObject:
   - component: {fileID: 1032921363}
   - component: {fileID: 1032921364}
   - component: {fileID: 1032921365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2567,6 +2794,117 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6953639686221701806, guid: c1a470ea6bfa48742a8c9565ba90fb8b, type: 3}
   m_PrefabInstance: {fileID: 1082668129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1125794842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125794843}
+  - component: {fileID: 1125794845}
+  - component: {fileID: 1125794844}
+  m_Layer: 6
+  m_Name: Square (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1125794843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125794842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.06, y: -4.14, z: 9.972943}
+  m_LocalScale: {x: 1.6229103, y: 23.111109, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960188747}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1125794844
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125794842}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1125794845
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125794842}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1139922931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,7 +2916,7 @@ GameObject:
   - component: {fileID: 1139922932}
   - component: {fileID: 1139922933}
   - component: {fileID: 1139922934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2689,7 +3027,7 @@ GameObject:
   - component: {fileID: 1172899496}
   - component: {fileID: 1172899495}
   - component: {fileID: 1172899497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2800,7 +3138,7 @@ GameObject:
   - component: {fileID: 1173525489}
   - component: {fileID: 1173525488}
   - component: {fileID: 1173525490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform_Uncolored_Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2887,7 +3225,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2898,7 +3236,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.4, y: 1}
+  m_Size: {x: 4, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &1222037437
 GameObject:
@@ -3055,7 +3393,7 @@ GameObject:
   - component: {fileID: 1261101929}
   - component: {fileID: 1261101928}
   - component: {fileID: 1261101930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3166,7 +3504,7 @@ GameObject:
   - component: {fileID: 1267323453}
   - component: {fileID: 1267323452}
   - component: {fileID: 1267323454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform_Uncolored_Wide (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3253,7 +3591,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3264,7 +3602,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.4, y: 1}
+  m_Size: {x: 4, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &1284066192
 GameObject:
@@ -3361,7 +3699,7 @@ GameObject:
   - component: {fileID: 1293594139}
   - component: {fileID: 1293594140}
   - component: {fileID: 1293594141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3583,7 +3921,7 @@ GameObject:
   - component: {fileID: 1348747557}
   - component: {fileID: 1348747558}
   - component: {fileID: 1348747559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3694,7 +4032,7 @@ GameObject:
   - component: {fileID: 1350114550}
   - component: {fileID: 1350114551}
   - component: {fileID: 1350114552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3805,7 +4143,7 @@ GameObject:
   - component: {fileID: 1368206960}
   - component: {fileID: 1368206961}
   - component: {fileID: 1368206962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3916,7 +4254,7 @@ GameObject:
   - component: {fileID: 1382076102}
   - component: {fileID: 1382076103}
   - component: {fileID: 1382076104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4027,7 +4365,7 @@ GameObject:
   - component: {fileID: 1386401000}
   - component: {fileID: 1386400999}
   - component: {fileID: 1386401001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4189,6 +4527,117 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2872070822483200265, guid: fb1912c7dd291c040a296924b0d68d79, type: 3}
   m_PrefabInstance: {fileID: 1387729604}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1410261442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410261443}
+  - component: {fileID: 1410261445}
+  - component: {fileID: 1410261444}
+  m_Layer: 6
+  m_Name: Square (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410261443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410261442}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.18, y: 7.94, z: 9.972943}
+  m_LocalScale: {x: 1.6229103, y: 33.45102, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960188747}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &1410261444
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410261442}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1410261445
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410261442}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1421322175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4266,7 +4715,7 @@ GameObject:
   - component: {fileID: 1433332202}
   - component: {fileID: 1433332201}
   - component: {fileID: 1433332203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4377,7 +4826,7 @@ GameObject:
   - component: {fileID: 1480525953}
   - component: {fileID: 1480525952}
   - component: {fileID: 1480525954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4488,7 +4937,7 @@ GameObject:
   - component: {fileID: 1496683052}
   - component: {fileID: 1496683053}
   - component: {fileID: 1496683054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4745,7 +5194,7 @@ GameObject:
   - component: {fileID: 1600101351}
   - component: {fileID: 1600101350}
   - component: {fileID: 1600101352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4967,7 +5416,7 @@ GameObject:
   - component: {fileID: 1660491343}
   - component: {fileID: 1660491342}
   - component: {fileID: 1660491344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5162,7 +5611,7 @@ GameObject:
   - component: {fileID: 1696378998}
   - component: {fileID: 1696378999}
   - component: {fileID: 1696379000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5273,7 +5722,7 @@ GameObject:
   - component: {fileID: 1701354831}
   - component: {fileID: 1701354832}
   - component: {fileID: 1701354833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5421,7 +5870,7 @@ GameObject:
   - component: {fileID: 1724525903}
   - component: {fileID: 1724525902}
   - component: {fileID: 1724525904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5604,15 +6053,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5656,7 +6105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8942925490989933264, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_GravityScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
@@ -5959,7 +6408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900490928}
   - component: {fileID: 1900490929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6160,6 +6609,10 @@ Transform:
   - {fileID: 1382076102}
   - {fileID: 849781384}
   - {fileID: 1496683052}
+  - {fileID: 601817936}
+  - {fileID: 1125794843}
+  - {fileID: 566652430}
+  - {fileID: 1410261443}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6441,7 +6894,7 @@ GameObject:
   - component: {fileID: 2042071440}
   - component: {fileID: 2042071441}
   - component: {fileID: 2042071442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6552,7 +7005,7 @@ GameObject:
   - component: {fileID: 2045003857}
   - component: {fileID: 2045003858}
   - component: {fileID: 2045003859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6663,7 +7116,7 @@ GameObject:
   - component: {fileID: 2046545923}
   - component: {fileID: 2046545924}
   - component: {fileID: 2046545925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6774,7 +7227,7 @@ GameObject:
   - component: {fileID: 2107282824}
   - component: {fileID: 2107282825}
   - component: {fileID: 2107282826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneTile (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6789,7 +7242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107282823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.23, y: -11.9, z: 9.972943}
+  m_LocalPosition: {x: -7.23, y: -11.761, z: 9.972943}
   m_LocalScale: {x: 2, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
