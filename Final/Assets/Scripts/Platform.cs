@@ -1,31 +1,31 @@
 using UnityEngine;
+
 public class Platform : MonoBehaviour
 {
-        [SerializeField]
-        private GameObject[] Players;
+    [SerializeField]
+    private GameObject[] Players;
 
-        private Rigidbody2D _rb;
+    private Rigidbody2D _rb;
 
-        private void Start()
-        {
-            _rb = GetComponent<Rigidbody2D>();
-        }
-
-private void OnTriggerEnter2D(Collider2D col)
+    private void Start()
     {
-
-    Debug.Log("Hit with " + col.name);
-
-    // Verifica si el objeto que ha entrado en contacto es un jugador
-    for (int i = 0; i < Players.Length; i++)
-    {
-        if (Players[i] == col.gameObject)
-        {
-            // Si el objeto colisionado coincide con un jugador en el arreglo, desactívalo
-            Players[i].SetActive(false);
-            break;
-        }
+        _rb = GetComponent<Rigidbody2D>();
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        // Verifica si el objeto que ha entrado en contacto es un jugador
+        for (int i = 0; i < Players.Length; i++)
+        {
+            if (Players[i] == col.gameObject)
+            {
+                Debug.Log("Hit with " + col.name);
+                // Si el objeto colisionado coincide con un jugador en el arreglo, desactívalo
+                Players[i].SetActive(false);
+                break;
+            }
+        }
 
     }
 
