@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - Warrior
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
+  - Knight
+  - BlueEgg
+  - RedEgg
   - 
   - 
   - 

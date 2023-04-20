@@ -4,7 +4,7 @@ public class PlayerMovement1 : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 5f; // Velocidad de movimiento
     [SerializeField] private float jumpForce = 10f; // Fuerza del salto
-    [SerializeField] private float groundCheckRadius = 0.2f; // Radio del círculo para comprobar si está en el suelo
+    [SerializeField] private float groundCheckRadius = 1f; // Radio del círculo para comprobar si está en el suelo
     [SerializeField] private LayerMask whatIsGround; // Capa que representa el suelo
 
     private Rigidbody2D rb;
