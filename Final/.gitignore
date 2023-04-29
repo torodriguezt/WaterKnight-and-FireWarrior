@@ -11,6 +11,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
@@ -25,6 +26,7 @@
 /*.vscode
 /*.sublime-workspace
 /.idea
+/EditorUserSettings.asset
 
 # Gradle cache directory
 .gradle/
