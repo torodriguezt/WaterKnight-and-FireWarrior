@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6953639686221701806}
   - component: {fileID: 7903903868363796760}
   - component: {fileID: 1277959316033552016}
-  - component: {fileID: -2234630301771284446}
+  - component: {fileID: -7546896517368279935}
   m_Layer: 0
   m_Name: RedEgg
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5999999, y: 1.5999999}
   m_Direction: 0
---- !u!114 &-2234630301771284446
+--- !u!114 &-7546896517368279935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,4 +114,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82625e7f3e053fc44b97236195822b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}

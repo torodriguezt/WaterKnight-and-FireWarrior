@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2872070822483200265}
   - component: {fileID: 8739530885343370648}
   - component: {fileID: -2036837631935729691}
-  - component: {fileID: -1693787371837991520}
+  - component: {fileID: 7380666661419762506}
   m_Layer: 0
   m_Name: BlueEgg
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5999999, y: 1.5999999}
   m_Direction: 0
---- !u!114 &-1693787371837991520
+--- !u!114 &7380666661419762506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,4 +114,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82625e7f3e053fc44b97236195822b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
