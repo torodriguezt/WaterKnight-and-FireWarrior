@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eggs: MonoBehaviour
+public class eggs: MonoBehaviour
 {
     [SerializeField] private Player player;
 

@@ -2,41 +2,21 @@ using UnityEngine;
 
 public class PlatformButton : MonoBehaviour
 {
-    public GameObject platform;
-    public float activationTime = 1f;
+    public GameObject objectToActivate; // Objeto que se activará al entrar en contacto con el botón
 
-    private float timeOnButton = 0f;
-    private bool platformActivated = false;
-
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // si el jugador está encima del botón
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            timeOnButton += Time.deltaTime;
-
-            // si el tiempo que el jugador está sobre el botón es mayor o igual al tiempo de activación, entonces activa la plataforma
-            if (timeOnButton >= activationTime && !platformActivated)
-            {
-                platform.SetActive(true);
-                platformActivated = true;
-            }
+            objectToActivate.SetActive(true);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        // si el jugador sale del botón
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            timeOnButton = 0f;
-
-            // desactiva la plataforma
-            if (platformActivated)
-            {
-                platform.SetActive(false);
-                platformActivated = false;
-            }
+            objectToActivate.SetActive(false);
         }
     }
 }

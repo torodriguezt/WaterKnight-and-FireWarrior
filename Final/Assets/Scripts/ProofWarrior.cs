@@ -29,8 +29,8 @@ public class ProofWarrior : MonoBehaviour
         if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        } 
-        
+        }
+
         if (horizontalMovement < 0 && facingRight)
         {
             Flip();
