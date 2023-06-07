@@ -23,11 +23,15 @@ public class Platform : MonoBehaviour
                 Debug.Log("Hit with " + col.name);
                 // Si el objeto colisionado coincide con un jugador en el arreglo, desactívalo
                 Players[i].SetActive(false);
-                break;
+                Player.check++;
+            }
+            if (Player.check == 2)
+            {
+                Player.check = 0;
+                GameManager.Instance.GameOver();
             }
         }
 
     }
-
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5964574464156241492}
   - component: {fileID: 5964574464156241493}
   - component: {fileID: 5964574464156241494}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RedDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
