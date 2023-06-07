@@ -3643,6 +3643,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3000030321886195124, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: Players.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000030321886195124, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: Players.Array.data[0]
+      value: 
+      objectReference: {fileID: 559147000}
     - target: {fileID: 5964574464156241491, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
       propertyPath: m_Name
       value: RedDoor (1)
@@ -5750,6 +5758,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3000030321886195124, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: Players.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000030321886195124, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: Players.Array.data[0]
+      value: 
+      objectReference: {fileID: 949861141}
     - target: {fileID: 5964574464156241491, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
       propertyPath: m_Name
       value: RedDoor
@@ -5805,6 +5821,18 @@ PrefabInstance:
     - target: {fileID: 5964574464156241492, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964574464156241493, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964574464156241493, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964574464156241493, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: m_Color.r
+      value: 0.05882353
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}

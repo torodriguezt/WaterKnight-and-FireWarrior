@@ -5221,6 +5221,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740262646}
     m_Modifications:
+    - target: {fileID: 3000030321886195124, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: Players.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000030321886195124, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
+      propertyPath: Players.Array.data[0]
+      value: 
+      objectReference: {fileID: 17576565}
     - target: {fileID: 5964574464156241491, guid: 01146e29e1378b64c89cb16cbb1b85ef, type: 3}
       propertyPath: m_Name
       value: RedDoor
@@ -12485,6 +12493,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 9021882419670517250, guid: aaedc7d9b12cd4f41a7110f9cce5148d, type: 3}
+      propertyPath: Players.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021882419670517250, guid: aaedc7d9b12cd4f41a7110f9cce5148d, type: 3}
+      propertyPath: Players.Array.data[0]
+      value: 
+      objectReference: {fileID: 1212486640}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaedc7d9b12cd4f41a7110f9cce5148d, type: 3}
 --- !u!4 &1839598657 stripped
