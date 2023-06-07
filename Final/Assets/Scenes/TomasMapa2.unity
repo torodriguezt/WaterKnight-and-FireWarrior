@@ -467,6 +467,10 @@ PrefabInstance:
       propertyPath: _initPosTransform
       value: 
       objectReference: {fileID: 1622484476}
+    - target: {fileID: 6213353320814191681, guid: ca7bbf9b8c153ed4981c9a1194e219e5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6316519271179008771, guid: ca7bbf9b8c153ed4981c9a1194e219e5, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -1047,7 +1051,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 0.3}
+  m_Size: {x: 3.5, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &259088925
 GameObject:
@@ -2531,6 +2535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWarrior
       objectReference: {fileID: 0}
+    - target: {fileID: 3309907042680412335, guid: f07efd3e702352d458126420a2887aa3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3309907042680412322, guid: f07efd3e702352d458126420a2887aa3, type: 3}
     - {fileID: 3309907042680412323, guid: f07efd3e702352d458126420a2887aa3, type: 3}
@@ -2870,7 +2878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7375894484798455651, guid: 988dae8f6f2f9a644b84b992b237f112, type: 3}
       propertyPath: m_Size.y
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7375894484798455651, guid: 988dae8f6f2f9a644b84b992b237f112, type: 3}
       propertyPath: m_Offset.y
@@ -2958,7 +2966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: fdfb3796a96b09f45b7ed20555d95926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5648,7 +5656,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9e5e200069c8ec14b857e10db776c146, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6977,6 +6985,10 @@ PrefabInstance:
       propertyPath: _initPosTransform
       value: 
       objectReference: {fileID: 1831414660}
+    - target: {fileID: 6213353320814191681, guid: ca7bbf9b8c153ed4981c9a1194e219e5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6316519271179008771, guid: ca7bbf9b8c153ed4981c9a1194e219e5, type: 3}
       propertyPath: m_RootOrder
       value: 10
