@@ -72,11 +72,15 @@ public class GameManager : MonoBehaviour
 
     public void levelCompletedScreen()
     {
-        Player.completed = 0;
         GameEvents.LevelCompletedEvent?.Invoke(_score, _level);
-
+        HandlePassLevel();
     }
 
+    public void HandlePassLevel()
+    {
+        Debug.Log("Loading Level Completed...");
+        SceneManager.LoadScene("LevelPassed");
+    }
     public void GameOver()
     {
         Debug.Log("Game over");

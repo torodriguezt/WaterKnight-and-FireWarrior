@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AlejoMapa2.unity
     guid: 6a3179af8f61afb4097424a0d7ed9551
   - enabled: 1
+    path: Assets/Scenes/LevelPassed.unity
+    guid: 6f8b312670e9fd4498f4bda58ff75f64
+  - enabled: 1
     path: Assets/Scenes/TomasMapa2.unity
     guid: 2cfd2b3c467a0bf42ae83790205e534e
   m_configObjects: {}
