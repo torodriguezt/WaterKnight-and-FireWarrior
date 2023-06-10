@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelPassed.unity
     guid: 6f8b312670e9fd4498f4bda58ff75f64
   - enabled: 1
+    path: Assets/Scenes/GameCompleted.unity
+    guid: 8cf7dfd92e526854fa4031f279df5607
+  - enabled: 1
     path: Assets/Scenes/TomasMapa2.unity
     guid: 2cfd2b3c467a0bf42ae83790205e534e
   m_configObjects: {}

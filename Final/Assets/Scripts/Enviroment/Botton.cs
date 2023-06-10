@@ -16,6 +16,16 @@ public class Botton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        movePlatform.setMove(true);
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
         movePlatform.Move();
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        movePlatform.setMove(false);
     }
 }

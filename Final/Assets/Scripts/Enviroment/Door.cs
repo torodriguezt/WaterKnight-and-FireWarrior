@@ -8,7 +8,6 @@ public class Door : MonoBehaviour
     private GameObject[] Players;
 
     private Rigidbody2D _rb;
-
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -23,6 +22,7 @@ public class Door : MonoBehaviour
             {
                 Debug.Log("Hit with " + col.name);
                 Player.completed++;
+                Debug.Log(Player.completed);
             }
             if (Player.completed == 2)
             {
@@ -32,4 +32,11 @@ public class Door : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        Debug.Log("bye with " + col.name);
+        Player.completed--;
+    }
+
 }

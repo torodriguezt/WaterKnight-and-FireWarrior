@@ -11,30 +11,38 @@ public class PassLevel : MonoBehaviour
     [SerializeField]
     private TMP_Text _scoreText;
     [SerializeField]
-    private TMP_Text _levelText;
+    private TMP_Text _timeText;
     [SerializeField]
     private Button continueButton;
     [SerializeField]
     private Button menuButton;
 
+    private string score;
+
     private void Start()
     {
-        _scoreText = GetComponent<TMP_Text>();
-        _levelText = GetComponent<TMP_Text>();
-        GameEvents.LevelCompletedEvent += LevelCompleted;
+        LevelCompleted(GameManager.Instance.getPoints(), GameManager.Instance.getTime());
         menuButton.onClick.AddListener(OnButtonBack);
         continueButton.onClick.AddListener(OnButtonContinue);
     }
+    private void LevelCompleted(int points, float time)
+    {
+        points = points / 12;
+        if (points < 0.5)
+        {
+            score = "C";
+        }
+        else if (points < 0.92)
+        {
+            score = "B";
+        }
+        else
+        {
+            score = "A";
+        }
 
-    private void OnDestroy()
-    {
-        GameEvents.LevelCompletedEvent -= LevelCompleted;
-    }
-    private void LevelCompleted(int score, int level)
-    {
-        Debug.Log("AHHH");
-        _scoreText.text = $"Score: {score}";
-        _levelText.text = $"Level: {level}";
+        _scoreText.text = $"{score}";
+        _timeText.text = $"{time}";
     }
 
     void OnButtonBack()

@@ -8,15 +8,23 @@ public class PlayButton : MonoBehaviour
 {
 
     [SerializeField] private Button _startButton;
+    [SerializeField] private Button _exitButton;
 
     private void Start()
     {
         _startButton.onClick.AddListener(OnStartButtonClicked);
+        _exitButton.onClick.AddListener(OnExitButtonClicked);
     }
 
     public void OnStartButtonClicked()
     {
         _startButton.interactable = false;
         GameManager.Instance.StartGame();
+    }
+
+    public void OnExitButtonClicked()
+    {
+        _exitButton.interactable = false;
+        Application.Quit();
     }
 }

@@ -16,6 +16,7 @@ public class MovePlatform : MonoBehaviour
     [FormerlySerializedAs("_endPos")]
     [SerializeField]
     private Transform _endPosTransform;
+    private bool move = false;
 
 
     private Vector3 _initPos, _endPos;
@@ -24,6 +25,13 @@ public class MovePlatform : MonoBehaviour
     {
         _initPos = _initPosTransform.position;
         _endPos = _endPosTransform.position;
+    }
+    private void Update()
+    {
+    }
+    public void setMove(bool move)
+    {
+        this.move = move;
     }
 
     public void Move()

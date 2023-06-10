@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class eggs: MonoBehaviour
 {
-    [SerializeField] private Player player;
-
+    private Rigidbody2D _rb;
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        player.increasePoints();
         gameObject.SetActive(false);
+        GameManager.Instance.AddPoints();
     }
 }

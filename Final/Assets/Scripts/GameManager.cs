@@ -9,8 +9,30 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     //Gameplay
-    private int _score = 0;
+    private float _score = 0;
     private int _level = 0;
+    private float _time = 0;
+    private int _points = 0;
+    private float _total=0;
+
+    public float getScore()
+    {
+        return _score; 
+    }
+
+    public int getPoints()
+    {
+        return _points;
+    }
+    public int getLevel()
+    {
+        return _level;
+    }
+
+    public float getTime()
+    {
+        return _time;
+    }
 
     private void Awake()
     {
@@ -33,6 +55,22 @@ public class GameManager : MonoBehaviour
         GameEvents.OnLevelProgressEvent += OnLevelProgress;
     }
 
+    public void AddPoints()
+    {
+        _points++;
+    }
+
+    public void increaseScore()
+    {
+        _score += _points;
+        _time = _time - 30;
+        _total += _time;
+    }
+
+    public void finalScore()
+    {
+        _score=(_score*10) - _total;
+    }
     public void StartGame()
     {
         HandleLevel1();
@@ -62,6 +100,11 @@ public class GameManager : MonoBehaviour
         {
             HandleLevel4();
         }
+        if (_level == 4)
+        {
+            finalScore();
+            HandleRanking();
+        }
     }
 
     public void continueLevel()
@@ -72,66 +115,67 @@ public class GameManager : MonoBehaviour
 
     public void levelCompletedScreen()
     {
-        GameEvents.LevelCompletedEvent?.Invoke(_score, _level);
+        _time = Time.time - _time;
         HandlePassLevel();
     }
 
     public void HandlePassLevel()
     {
         Debug.Log("Loading Level Completed...");
-        SceneManager.LoadScene("LevelPassed");
+        StartCoroutine(LoadGameplayAsyncScene("LevelPassed"));
     }
     public void GameOver()
     {
+        _time = Time.time - _time;
         Debug.Log("Game over");
-        GameEvents.OnGameOverEvent?.Invoke(_score, _level);
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(LoadGameplayAsyncScene("GameOver"));
         //TODO: Music end
     }
 
     void HandleMenu()
     {
+        _points = 0;
         Debug.Log("Loading Menu...");
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(LoadGameplayAsyncScene("MainMenu"));
         //AudioManager.Instance.PlayMusic(AudioMusicType.Menu);
     }
 
     void HandleLevel1()
     {
-        Debug.Log("Loading Gameplay...");
-
-        _score = 0;
-
+        _time = Time.time;
+        _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("AlejoMapa2"));
     }
 
     void HandleLevel2()
     {
-        Debug.Log("Loading Gameplay...");
-
-        _score = 0;
-
+        increaseScore();
+        _time = Time.time;
+        _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("CaroMapa"));
     }
 
     void HandleLevel3()
     {
-        Debug.Log("Loading Gameplay...");
-
-        _score = 0;
-
+        increaseScore();
+        _time = Time.time;
+        _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("CataMapa"));
     }
 
     void HandleLevel4()
     {
-        Debug.Log("Loading Gameplay...");
-
-        _score = 0;
-
+        increaseScore();
+        _time = Time.time;
+        _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("TomasMapa2"));
     }
 
+    void HandleRanking()
+    { 
+        increaseScore();
+        StartCoroutine(LoadGameplayAsyncScene("GameCompleted"));
+    }
     IEnumerator LoadGameplayAsyncScene(string scene)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
@@ -143,11 +187,6 @@ public class GameManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
-
-        //_time = Time.time;
-        // if(GameEvents.OnStartGameEvent != null)
-        //     GameEvents.OnStartGameEvent.Invoke();
-        GameEvents.OnStartGameEvent?.Invoke();
         //AudioManager.Instance.PlayMusic(AudioMusicType.Gameplay);
     }
 
