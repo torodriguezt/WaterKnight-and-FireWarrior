@@ -77,6 +77,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Instruction()
+    {
+        HandleInstruction();
+    }
+
     public void MainMenu()
     {
         HandleMenu();
@@ -138,6 +143,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Loading Menu...");
         StartCoroutine(LoadGameplayAsyncScene("MainMenu"));
         //AudioManager.Instance.PlayMusic(AudioMusicType.Menu);
+    }
+
+    void HandleInstruction()
+    {
+        Debug.Log("Loading instruction...");
+        StartCoroutine(LoadGameplayAsyncScene("instructions"));
     }
 
     void HandleLevel1()

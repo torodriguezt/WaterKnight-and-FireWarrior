@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startButton: {fileID: 1092904939}
+  _instructionButton: {fileID: 1449417645}
   _exitButton: {fileID: 159133255}
 --- !u!1 &934546937
 GameObject:

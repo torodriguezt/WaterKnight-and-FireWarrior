@@ -8,12 +8,14 @@ public class PlayButton : MonoBehaviour
 {
 
     [SerializeField] private Button _startButton;
+    [SerializeField] private Button _instructionButton;
     [SerializeField] private Button _exitButton;
 
     private void Start()
     {
         _startButton.onClick.AddListener(OnStartButtonClicked);
         _exitButton.onClick.AddListener(OnExitButtonClicked);
+        _instructionButton.onClick.AddListener(OnInstructionButtonClicked);
     }
 
     public void OnStartButtonClicked()
@@ -26,5 +28,11 @@ public class PlayButton : MonoBehaviour
     {
         _exitButton.interactable = false;
         Application.Quit();
+    }
+
+    public void OnInstructionButtonClicked()
+    {
+        _instructionButton.interactable = false;
+        GameManager.Instance.Instruction();
     }
 }
