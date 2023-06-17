@@ -203,7 +203,14 @@ public class GameManager : MonoBehaviour
 
     void OnLevelProgress(int level)
     {
-        _level = level + 1;
+        if (_level == 4)
+        {
+            _level = 1;
+        }
+        else
+        {
+            _level = level + 1;
+        }
     }
 
 }
