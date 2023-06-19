@@ -844,6 +844,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  playerAnimator: {fileID: 0}
 --- !u!1001 &295621471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8367,11 +8368,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2015434977, guid: f07efd3e702352d458126420a2887aa3, type: 3}
       propertyPath: jumpForce
-      value: 8
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 2015434977, guid: f07efd3e702352d458126420a2887aa3, type: 3}
       propertyPath: whatIsGround.m_Bits
-      value: 64
+      value: 3136
       objectReference: {fileID: 0}
     - target: {fileID: 3309907042680412333, guid: f07efd3e702352d458126420a2887aa3, type: 3}
       propertyPath: m_RootOrder
