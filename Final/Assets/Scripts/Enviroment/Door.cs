@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class Door : MonoBehaviour
     private GameObject[] Players;
 
     private Rigidbody2D _rb;
+    private float timeToWait = 2f;
+    
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -27,12 +30,16 @@ public class Door : MonoBehaviour
             if (Player.completed == 2)
             {
                 Player.completed = 0;
-                GameManager.Instance.levelCompletedScreen();
+                Invoke("InvokeScene", timeToWait);
             }
         }
-
     }
 
+    private void InvokeScene()
+    {
+        GameManager.Instance.levelCompletedScreen();
+    }
+    
     private void OnTriggerExit2D(Collider2D col)
     {
         Debug.Log("bye with " + col.name);

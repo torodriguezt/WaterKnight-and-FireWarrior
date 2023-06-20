@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7903903868363796760}
   - component: {fileID: 1277959316033552016}
   - component: {fileID: 3505349713289247969}
-  - component: {fileID: -7099167270655222576}
+  - component: {fileID: 2817331271421720283}
   m_Layer: 0
   m_Name: RedEgg
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7099167270655222576
+--- !u!114 &2817331271421720283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -27,7 +27,8 @@ public class WarriorMovement : MonoBehaviour
         // Animator receives the informatiom about the position of the warrior
         playerAnimator.SetBool("isGrounded", isGrounded);
         
-        Debug.Log(horizontalMovement);
+        // The knight is falling if his y-axis velocity is negative
+        playerAnimator.SetFloat("AirSpeedY", rb.velocity.y);
         
         // Is the warrior running?
         if (Mathf.Abs(horizontalMovement) != 0)

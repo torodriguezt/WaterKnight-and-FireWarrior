@@ -1921,6 +1921,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2015434977, guid: f07efd3e702352d458126420a2887aa3, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 559147001}
+    - target: {fileID: 2015434977, guid: f07efd3e702352d458126420a2887aa3, type: 3}
       propertyPath: groundCheckRadius
       value: 0.7
       objectReference: {fileID: 0}
@@ -1995,6 +1999,11 @@ PrefabInstance:
 --- !u!1 &559147000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3309907042680412334, guid: f07efd3e702352d458126420a2887aa3, type: 3}
+  m_PrefabInstance: {fileID: 559146999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &559147001 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3309907042680412332, guid: f07efd3e702352d458126420a2887aa3, type: 3}
   m_PrefabInstance: {fileID: 559146999}
   m_PrefabAsset: {fileID: 0}
 --- !u!50 &559147008
@@ -4054,6 +4063,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  playerAnimator: {fileID: 949861144}
 --- !u!70 &949861143
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4070,6 +4080,11 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.7}
   m_Size: {x: 0.6, y: 1.2}
   m_Direction: 0
+--- !u!95 &949861144 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2982446484038651094, guid: 3e14bf7b39e2c2940a826eb72e6b8043, type: 3}
+  m_PrefabInstance: {fileID: 949861140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &964025838
 GameObject:
   m_ObjectHideFlags: 0
