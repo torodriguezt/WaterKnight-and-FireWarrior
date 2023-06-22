@@ -24,6 +24,6 @@ public class GameOverScreen : MonoBehaviour
     public void OnRetryButtonClicked()
     {
         retryButton.interactable = false;
-        GameManager.Instance.retryLevel();
+        GameManager.Instance.RetryLevel();
     }
 }

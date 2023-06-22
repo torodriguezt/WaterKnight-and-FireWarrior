@@ -3,35 +3,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    //Gameplay
-    private float _score = 0;
-    private int _level = 0;
-    private float _time = 0;
-    private int _points = 0;
-    private float _total=0;
+    
+    // Gameplay
+    private float _score;
+    private int _level;
+    private float _time;
+    private int _points;
+    
+    private float  final_points;
+    private Rank rank;
 
     public float getScore()
     {
         return _score; 
     }
 
-    public int getPoints()
+    public int GetPoints()
     {
         return _points;
     }
-    public int getLevel()
+    public int GetLevel()
     {
         return _level;
     }
 
-    public float getTime()
+    public float GetTime()
     {
         return _time;
+    }
+
+    public float GetFinalPoints()
+    {
+        return final_points;
     }
 
     private void Awake()
@@ -48,7 +57,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     private void Start()
     {
         MainMenu();
@@ -59,18 +67,7 @@ public class GameManager : MonoBehaviour
     {
         _points++;
     }
-
-    public void increaseScore()
-    {
-        _score += _points;
-        _time = _time - 30;
-        _total += _time;
-    }
-
-    public void finalScore()
-    {
-        _score=(_score*10) - _total;
-    }
+    
     public void StartGame()
     {
         HandleLevel1();
@@ -87,7 +84,7 @@ public class GameManager : MonoBehaviour
         HandleMenu();
     }
 
-    public void retryLevel()
+    public void RetryLevel()
     {
         if (_level == 0)
         {
@@ -107,24 +104,23 @@ public class GameManager : MonoBehaviour
         }
         if (_level == 4)
         {
-            finalScore();
             HandleRanking();
         }
     }
 
-    public void continueLevel()
+    public void ContinueLevel()
     {
         GameEvents.OnLevelProgressEvent?.Invoke(_level);
-        retryLevel();
+        RetryLevel();
     }
 
-    public void levelCompletedScreen()
+    public void LevelCompletedScreen()
     {
         _time = Time.time - _time;
         HandlePassLevel();
     }
 
-    public void HandlePassLevel()
+    private void HandlePassLevel()
     {
         Debug.Log("Loading Level Completed...");
         StartCoroutine(LoadGameplayAsyncScene("LevelPassed"));
@@ -137,7 +133,7 @@ public class GameManager : MonoBehaviour
         //TODO: Music end
     }
 
-    void HandleMenu()
+    private void HandleMenu()
     {
         _points = 0;
         Debug.Log("Loading Menu...");
@@ -145,46 +141,42 @@ public class GameManager : MonoBehaviour
         //AudioManager.Instance.PlayMusic(AudioMusicType.Menu);
     }
 
-    void HandleInstruction()
+    private void HandleInstruction()
     {
         Debug.Log("Loading instruction...");
         StartCoroutine(LoadGameplayAsyncScene("instructions"));
     }
 
-    void HandleLevel1()
+    private void HandleLevel1()
     {
         _time = Time.time;
         _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("AlejoMapa2"));
     }
 
-    void HandleLevel2()
+    private void HandleLevel2()
     {
-        increaseScore();
         _time = Time.time;
         _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("CaroMapa"));
     }
 
-    void HandleLevel3()
+    private void HandleLevel3()
     {
-        increaseScore();
         _time = Time.time;
         _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("CataMapa"));
     }
 
-    void HandleLevel4()
+    private void HandleLevel4()
     {
-        increaseScore();
         _time = Time.time;
         _points = 0;
         StartCoroutine(LoadGameplayAsyncScene("TomasMapa2"));
     }
 
-    void HandleRanking()
-    { 
-        increaseScore();
+    private void HandleRanking()
+    {
         StartCoroutine(LoadGameplayAsyncScene("GameCompleted"));
     }
     IEnumerator LoadGameplayAsyncScene(string scene)
@@ -201,7 +193,7 @@ public class GameManager : MonoBehaviour
         //AudioManager.Instance.PlayMusic(AudioMusicType.Gameplay);
     }
 
-    void OnLevelProgress(int level)
+    private void OnLevelProgress(int level)
     {
         if (_level == 4)
         {
@@ -213,4 +205,66 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Scores(float levelPoints)
+    {
+        final_points += levelPoints;
+    }
+
+    public Rank GetRank()
+    {
+        return rank;
+    }
+
+    [ContextMenu("SaveRank")]
+    public void SaveRank()
+    {
+        string rankData = JsonUtility.ToJson(rank, true);
+        Debug.Log(rankData);
+        PlayerPrefs.SetString("Rank", rankData);
+    }
+    
+    [ContextMenu("LoadRank")]
+    public void LoadRank(float score, string name)
+    {
+        string rankData = PlayerPrefs.GetString("Rank");
+        rank = JsonUtility.FromJson<Rank>(rankData);
+        if (rank == null)
+        {
+            rank = new Rank();
+        }
+
+        rank.AddUser(score, name);
+        SaveRank();
+    }
+
+}
+
+[Serializable]
+public class Rank
+{
+    public List<RankUser> users;
+
+    public Rank()
+    {
+        users = new List<RankUser>();
+    }
+
+    public void AddUser(float score, string name)
+    {
+        RankUser user = new RankUser(score, name);
+        users.Add(user);
+    }
+}
+
+[Serializable]
+public class RankUser
+{
+    public float score;
+    public string name;
+
+    public RankUser(float score, string name)
+    {
+        this.score = score;
+        this.name = name;
+    }
 }

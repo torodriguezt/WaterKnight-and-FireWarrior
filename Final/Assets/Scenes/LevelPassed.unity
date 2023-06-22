@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 591677086}
   - component: {fileID: 591677085}
   m_Layer: 5
-  m_Name: time
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1371,8 +1371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34ab962ad7b1034bb12084305e5b817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 281802974}
-  _timeText: {fileID: 591677085}
+  scoreText: {fileID: 281802974}
+  timeText: {fileID: 591677085}
   continueButton: {fileID: 513087219}
   menuButton: {fileID: 1341321681}
 --- !u!1 &1657843043

@@ -37,7 +37,7 @@ public class Door : MonoBehaviour
 
     private void InvokeScene()
     {
-        GameManager.Instance.levelCompletedScreen();
+        GameManager.Instance.LevelCompletedScreen();
     }
     
     private void OnTriggerExit2D(Collider2D col)

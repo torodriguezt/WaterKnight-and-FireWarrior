@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,19 +6,20 @@ using TMPro;
 public class PassLevel : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text _scoreText;
+    private TMP_Text scoreText;
     [SerializeField]
-    private TMP_Text _timeText;
+    private TMP_Text timeText;
     [SerializeField]
     private Button continueButton;
     [SerializeField]
     private Button menuButton;
 
     private string score;
+    private float totalLevel;
 
     private void Start()
     {
-        LevelCompleted(GameManager.Instance.getPoints(), GameManager.Instance.getTime());
+        LevelCompleted(GameManager.Instance.GetPoints(), GameManager.Instance.GetTime());
         menuButton.onClick.AddListener(OnButtonBack);
         continueButton.onClick.AddListener(OnButtonContinue);
     }
@@ -41,16 +39,27 @@ public class PassLevel : MonoBehaviour
             score = "A";
         }
 
-        _scoreText.text = $"{score}";
-        _timeText.text = $"{time}";
+        scoreText.text = $"{score}";
+        timeText.text = $"{time}";
+
+        totalLevel =  points - (float)(0.3 * time);
+
+        if (totalLevel < 0)
+        {
+            totalLevel = 800.5f;
+        } 
+        
+        GameManager.Instance.Scores(totalLevel);
     }
 
-    void OnButtonBack()
+    private void OnButtonBack()
     {
         GameManager.Instance.MainMenu();
     }
-    void OnButtonContinue()
+    private void OnButtonContinue()
     {
-        GameManager.Instance.continueLevel();
+        GameManager.Instance.ContinueLevel();
     }
+    
+    
 }

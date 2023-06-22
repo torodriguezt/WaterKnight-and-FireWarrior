@@ -1444,8 +1444,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 580, y: 444}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 594, y: 431}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &293991763
 MonoBehaviour:
@@ -11822,8 +11822,8 @@ MonoBehaviour:
   _backButton: {fileID: 2062003998}
   audioSource: {fileID: 789020467}
   muteButton: {fileID: 293991763}
-  mutedSprite: {fileID: 21300000, guid: 03d0123afb5451345b88c605c86db28b, type: 3}
-  unmutedSprite: {fileID: 21300000, guid: a9e89ee3f041fa5459a4e78b37d1e58e, type: 3}
+  mutedSprite: {fileID: 21300000, guid: 751861d32ecb81244a050c7400a38fd3, type: 3}
+  unmutedSprite: {fileID: 21300000, guid: 678ededfa7c40f24497d0b3a2814d3b7, type: 3}
 --- !u!1001 &2076252394
 PrefabInstance:
   m_ObjectHideFlags: 0
