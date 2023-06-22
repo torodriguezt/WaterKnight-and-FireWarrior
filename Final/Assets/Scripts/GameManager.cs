@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     private int _level;
     private float _time;
     private int _points;
-    
+    private string userName;
+
     private float  final_points;
     private Rank rank;
 
@@ -37,7 +38,10 @@ public class GameManager : MonoBehaviour
     {
         return _time;
     }
-
+    public string GetUserName()
+    {
+        return userName;
+    }
     public float GetFinalPoints()
     {
         return final_points;
@@ -67,11 +71,15 @@ public class GameManager : MonoBehaviour
     {
         _points++;
     }
+
+    public void SetName(string userName)
+    {
+        this.userName = userName;
+    }
     
     public void StartGame()
     {
         HandleLevel1();
-
     }
 
     public void Instruction()

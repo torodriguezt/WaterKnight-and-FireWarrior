@@ -15,7 +15,7 @@ public class Ranking : MonoBehaviour
     {
         menuButton.onClick.AddListener(OnMenuButtonClicked);
         Debug.Log(GameManager.Instance.GetFinalPoints());
-        GameManager.Instance.LoadRank(GameManager.Instance.GetFinalPoints(), "Carolina");
+        GameManager.Instance.LoadRank(GameManager.Instance.GetFinalPoints(), GameManager.Instance.GetUserName());
         Rank rank = GameManager.Instance.GetRank();
         rank.users = rank.users.OrderByDescending(u => u.score).Take(5).ToList();
         //Rank rank = GameManager.Instance.LoadRank(GameManager.Instance.GetFinalPoints(), "Carolina");

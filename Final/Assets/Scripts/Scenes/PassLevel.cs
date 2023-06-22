@@ -42,11 +42,11 @@ public class PassLevel : MonoBehaviour
         scoreText.text = $"{score}";
         timeText.text = $"{time}";
 
-        totalLevel =  points - (float)(0.3 * time);
+        totalLevel =  points*100 - (float)(0.3 * time);
 
         if (totalLevel < 0)
         {
-            totalLevel = 800.5f;
+            totalLevel = 0;
         } 
         
         GameManager.Instance.Scores(totalLevel);
