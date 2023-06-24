@@ -28,7 +28,7 @@ In this game, you can control two different players to combine them to pass the 
 
 ## Gameplay Video 
 
-Haven't you decided to playing this game? [click here!](insert link here)
+Haven't you decided to playing this game? [click here!](https://www.youtube.com/watch?v=ncHXUSPru8g)
 
 ## Team Members
 
