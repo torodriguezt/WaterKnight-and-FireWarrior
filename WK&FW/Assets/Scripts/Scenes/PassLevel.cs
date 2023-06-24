@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System;
 
 public class PassLevel : MonoBehaviour
 {
@@ -25,12 +25,13 @@ public class PassLevel : MonoBehaviour
     }
     private void LevelCompleted(int points, float time)
     {
-        points = points / 12;
-        if (points < 0.5)
+        float p = (float)points / 12;
+        
+        if (p < 0.5)
         {
             score = "C";
         }
-        else if (points < 0.92)
+        else if (p < 0.95)
         {
             score = "B";
         }
@@ -38,11 +39,10 @@ public class PassLevel : MonoBehaviour
         {
             score = "A";
         }
-
         scoreText.text = $"{score}";
-        timeText.text = $"{time}";
+        timeText.text = $"{(float)Math.Round(time,2)}";
 
-        totalLevel =  points*100 - (float)(0.3 * time);
+        totalLevel =  p*100 - (float)(0.3 * time);
 
         if (totalLevel < 0)
         {
